@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <style>
+    text {
+      font-family: Arial, sans-serif;
+    }
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .subtitle {
+      font-size: 18px;
+    }
+    .marker-title {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .marker-text {
+      font-size: 12px;
+    }
+    .correlation-line {
+      stroke-width: 2;
+      fill: none;
+    }
+    .marker-circle {
+      stroke-width: 2;
+    }
+    .panel {
+      fill: white;
+      stroke: #ddd;
+      stroke-width: 1;
+      rx: 10;
+      ry: 10;
+    }
+    .arrow {
+      stroke-width: 2;
+      marker-end: url(#arrowhead);
+    }
+    .annotation {
+      font-size: 12px;
+      fill: #555;
+    }
+  </style>
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+    
+    <linearGradient id="accuracy-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff4444" />
+      <stop offset="50%" stop-color="#ffcc00" />
+      <stop offset="100%" stop-color="#44cc44" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f9f9f9" />
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" class="title">다중 바이오마커 통합 분석</text>
+  <text x="400" y="70" text-anchor="middle" class="subtitle">Multi-Biomarker Integration Analysis</text>
+  
+  <!-- Main Biomarker Circles -->
+  <circle cx="400" cy="220" r="80" fill="#f0f8ff" stroke="#0066cc" stroke-width="3" />
+  <text x="400" y="210" text-anchor="middle" class="marker-title">포도당</text>
+  <text x="400" y="230" text-anchor="middle" class="marker-text">주요 에너지원</text>
+  <text x="400" y="245" text-anchor="middle" class="marker-text">0.2-0.8 mg/dL (땀)</text>
+  
+  <circle cx="230" cy="300" r="60" fill="#fff0f0" stroke="#cc0000" stroke-width="2" class="marker-circle" />
+  <text x="230" y="290" text-anchor="middle" class="marker-title">젖산</text>
+  <text x="230" y="310" text-anchor="middle" class="marker-text">무산소 대사 지표</text>
+  <text x="230" y="325" text-anchor="middle" class="marker-text">5-60 mg/dL</text>
+  
+  <circle cx="570" cy="300" r="60" fill="#f0fff0" stroke="#00cc00" stroke-width="2" class="marker-circle" />
+  <text x="570" y="290" text-anchor="middle" class="marker-title">나트륨</text>
+  <text x="570" y="310" text-anchor="middle" class="marker-text">체액 균형</text>
+  <text x="570" y="325" text-anchor="middle" class="marker-text">10-100 mM</text>
+  
+  <circle cx="275" cy="440" r="60" fill="#fffaf0" stroke="#ff8800" stroke-width="2" class="marker-circle" />
+  <text x="275" y="430" text-anchor="middle" class="marker-title">pH</text>
+  <text x="275" y="450" text-anchor="middle" class="marker-text">산-염기 균형</text>
+  <text x="275" y="465" text-anchor="middle" class="marker-text">4.5-7.0</text>
+  
+  <circle cx="525" cy="440" r="60" fill="#f0f0ff" stroke="#8800cc" stroke-width="2" class="marker-circle" />
+  <text x="525" y="430" text-anchor="middle" class="marker-title">칼륨</text>
+  <text x="525" y="450" text-anchor="middle" class="marker-text">세포 기능</text>
+  <text x="525" y="465" text-anchor="middle" class="marker-text">4-16 mM</text>
+  
+  <!-- Correlation Lines -->
+  <line x1="400" y1="220" x2="230" y2="300" class="correlation-line" stroke="#aa0000" />
+  <line x1="400" y1="220" x2="570" y2="300" class="correlation-line" stroke="#00aa00" />
+  <line x1="400" y1="220" x2="275" y2="440" class="correlation-line" stroke="#aa6600" />
+  <line x1="400" y1="220" x2="525" y2="440" class="correlation-line" stroke="#6600aa" />
+  <line x1="230" y1="300" x2="275" y2="440" class="correlation-line" stroke="#aa5500" stroke-dasharray="5,3" />
+  <line x1="570" y1="300" x2="525" y2="440" class="correlation-line" stroke="#005500" stroke-dasharray="5,3" />
+  <line x1="230" y1="300" x2="570" y2="300" class="correlation-line" stroke="#550055" stroke-dasharray="5,3" />
+  <line x1="275" y1="440" x2="525" y2="440" class="correlation-line" stroke="#555500" stroke-dasharray="5,3" />
+  
+  <!-- Correlation Explanations -->
+  <rect x="315" y="230" width="80" height="40" fill="white" stroke="#ddd" opacity="0.8" />
+  <text x="355" y="255" text-anchor="middle" class="annotation">역상관관계</text>
+  <text x="355" y="270" text-anchor="middle" class="annotation">운동 중</text>
+  
+  <rect x="485" y="230" width="80" height="40" fill="white" stroke="#ddd" opacity="0.8" />
+  <text x="525" y="255" text-anchor="middle" class="annotation">탈수 보정</text>
+  <text x="525" y="270" text-anchor="middle" class="annotation">요인</text>
+  
+  <rect x="335" y="330" width="80" height="40" fill="white" stroke="#ddd" opacity="0.8" />
+  <text x="375" y="350" text-anchor="middle" class="annotation">케톤산증</text>
+  <text x="375" y="365" text-anchor="middle" class="annotation">감지</text>
+  
+  <rect x="465" y="330" width="80" height="40" fill="white" stroke="#ddd" opacity="0.8" />
+  <text x="505" y="350" text-anchor="middle" class="annotation">스트레스</text>
+  <text x="505" y="365" text-anchor="middle" class="annotation">반응</text>
+  
+  <!-- Application Panels -->
+  <rect x="50" y="160" width="120" height="120" class="panel" />
+  <text x="110" y="200" text-anchor="middle" class="marker-title">당뇨 관리</text>
+  <text x="110" y="220" text-anchor="middle" class="marker-text">• 혈당 변동성 예측</text>
+  <text x="110" y="240" text-anchor="middle" class="marker-text">• 탈수 보정</text>
+  <text x="110" y="260" text-anchor="middle" class="marker-text">• 합병증 조기 감지</text>
+  
+  <rect x="50" y="320" width="120" height="120" class="panel" />
+  <text x="110" y="360" text-anchor="middle" class="marker-title">운동 성능</text>
+  <text x="110" y="380" text-anchor="middle" class="marker-text">• 무산소 역치 측정</text>
+  <text x="110" y="400" text-anchor="middle" class="marker-text">• 전해질 균형</text>
+  <text x="110" y="420" text-anchor="middle" class="marker-text">• 피로도 평가</text>
+  
+  <rect x="650" y="240" width="120" height="120" class="panel" />
+  <text x="710" y="280" text-anchor="middle" class="marker-title">스트레스 모니터링</text>
+  <text x="710" y="300" text-anchor="middle" class="marker-text">• 스트레스 지수</text>
+  <text x="710" y="320" text-anchor="middle" class="marker-text">• 회복 상태 평가</text>
+  <text x="710" y="340" text-anchor="middle" class="marker-text">• 생체 부하 점수</text>
+  
+  <!-- Accuracy Comparison -->
+  <rect x="150" y="490" width="500" height="80" class="panel" />
+  <text x="400" y="510" text-anchor="middle" class="marker-title">측정 정확도 향상</text>
+  
+  <rect x="170" y="530" width="460" height="20" fill="#eeeeee" rx="5" ry="5" />
+  <rect x="170" y="530" width="153" height="20" fill="url(#accuracy-gradient)" rx="5" ry="5" />
+  <text x="170" y="545" text-anchor="start" class="annotation">단일 센서: 17.8% 오차</text>
+  
+  <rect x="170" y="555" width="460" height="20" fill="#eeeeee" rx="5" ry="5" />
+  <rect x="170" y="555" width="290" height="20" fill="url(#accuracy-gradient)" rx="5" ry="5" />
+  <text x="170" y="570" text-anchor="start" class="annotation">표준 용액: 6.3% 오차</text>
+  
+  <rect x="170" y="580" width="460" height="20" fill="#eeeeee" rx="5" ry="5" />
+  <rect x="170" y="580" width="366" height="20" fill="url(#accuracy-gradient)" rx="5" ry="5" />
+  <text x="170" y="595" text-anchor="start" class="annotation">다중 바이오마커: 4.2% 오차</text>
+  
+  <!-- Connection Arrows -->
+  <line x1="170" y1="220" x2="320" y2="220" class="arrow" stroke="#333" />
+  <line x1="170" y1="380" x2="230" y2="350" class="arrow" stroke="#333" />
+  <line x1="650" y1="300" x2="570" y2="350" class="arrow" stroke="#333" />
+  
+  <!-- Key Benefit Box -->
+  <rect x="650" y="390" width="120" height="150" fill="#f8f8ff" stroke="#4444cc" stroke-width="2" rx="10" ry="10" />
+  <text x="710" y="410" text-anchor="middle" class="marker-title">핵심 혜택</text>
+  <text x="710" y="430" text-anchor="middle" class="marker-text">• 상호 검증</text>
+  <text x="710" y="450" text-anchor="middle" class="marker-text">• 종합적 건강 평가</text>
+  <text x="710" y="470" text-anchor="middle" class="marker-text">• 정확도 ↑ 76.4%</text>
+  <text x="710" y="490" text-anchor="middle" class="marker-text">• 개인화된 분석</text>
+  <text x="710" y="510" text-anchor="middle" class="marker-text">• 높은 임상적 가치</text>
+</svg>
