@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <style>
+    text {
+      font-family: Arial, sans-serif;
+    }
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .subtitle {
+      font-size: 18px;
+    }
+    .axis-label {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .tick-label {
+      font-size: 12px;
+    }
+    .legend-text {
+      font-size: 12px;
+    }
+    .data-line {
+      fill: none;
+      stroke-width: 2.5;
+    }
+    .grid-line {
+      stroke: #dddddd;
+      stroke-width: 1;
+    }
+    .bar {
+      stroke-width: 1;
+      stroke: #ffffff;
+    }
+    .annotation {
+      font-size: 12px;
+      fill: #555;
+    }
+  </style>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f9f9f9" />
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" class="title">시뮬레이션 및 검증 결과</text>
+  <text x="400" y="70" text-anchor="middle" class="subtitle">Simulation and Validation Results</text>
+  
+  <!-- Chart 1: Accuracy Comparison Across Conditions -->
+  <rect x="50" y="100" width="700" height="200" fill="white" stroke="#dddddd" />
+  <text x="400" y="120" text-anchor="middle" class="axis-label">생리적 상태에 따른 측정 오차 (%)</text>
+  
+  <!-- X-axis -->
+  <line x1="100" y1="250" x2="700" y2="250" stroke="#333" stroke-width="1" />
+  <text x="150" y="270" text-anchor="middle" class="tick-label">안정 상태</text>
+  <text x="250" y="270" text-anchor="middle" class="tick-label">중간 강도 운동</text>
+  <text x="350" y="270" text-anchor="middle" class="tick-label">고강도 운동</text>
+  <text x="450" y="270" text-anchor="middle" class="tick-label">식후</text>
+  <text x="550" y="270" text-anchor="middle" class="tick-label">공복</text>
+  <text x="650" y="270" text-anchor="middle" class="tick-label">탈수 상태</text>
+  
+  <!-- Y-axis -->
+  <line x1="100" y1="250" x2="100" y2="150" stroke="#333" stroke-width="1" />
+  <text x="95" y="250" text-anchor="end" class="tick-label">0%</text>
+  <text x="95" y="230" text-anchor="end" class="tick-label">5%</text>
+  <text x="95" y="210" text-anchor="end" class="tick-label">10%</text>
+  <text x="95" y="190" text-anchor="end" class="tick-label">15%</text>
+  <text x="95" y="170" text-anchor="end" class="tick-label">20%</text>
+  <text x="95" y="150" text-anchor="end" class="tick-label">25%</text>
+  
+  <!-- Grid Lines -->
+  <line x1="100" y1="230" x2="700" y2="230" class="grid-line" />
+  <line x1="100" y1="210" x2="700" y2="210" class="grid-line" />
+  <line x1="100" y1="190" x2="700" y2="190" class="grid-line" />
+  <line x1="100" y1="170" x2="700" y2="170" class="grid-line" />
+  <line x1="100" y1="150" x2="700" y2="150" class="grid-line" />
+  
+  <!-- Data Bars -->
+  <!-- 안정 상태 -->
+  <rect x="130" y="166.5" width="40" height="83.5" fill="#ff6666" class="bar" />
+  <rect x="130" y="217.5" width="40" height="32.5" fill="#55aa55" class="bar" />
+  
+  <!-- 중간 강도 운동 -->
+  <rect x="230" y="156.6" width="40" height="93.4" fill="#ff6666" class="bar" />
+  <rect x="230" y="214.6" width="40" height="35.4" fill="#55aa55" class="bar" />
+  
+  <!-- 고강도 운동 -->
+  <rect x="330" y="142.8" width="40" height="107.2" fill="#ff6666" class="bar" />
+  <rect x="330" y="213.6" width="40" height="36.4" fill="#55aa55" class="bar" />
+  
+  <!-- 식후 -->
+  <rect x="430" y="162.6" width="40" height="87.4" fill="#ff6666" class="bar" />
+  <rect x="430" y="216.2" width="40" height="33.8" fill="#55aa55" class="bar" />
+  
+  <!-- 공복 -->
+  <rect x="530" y="166.9" width="40" height="83.1" fill="#ff6666" class="bar" />
+  <rect x="530" y="217.8" width="40" height="32.2" fill="#55aa55" class="bar" />
+  
+  <!-- 탈수 상태 -->
+  <rect x="630" y="175.4" width="40" height="74.6" fill="#ff6666" class="bar" />
+  <rect x="630" y="204.1" width="40" height="45.9" fill="#55aa55" class="bar" />
+  
+  <!-- Legend for Chart 1 -->
+  <rect x="550" y="130" width="15" height="15" fill="#ff6666" />
+  <text x="570" y="142" class="legend-text">기존 단일 센서</text>
+  <rect x="550" y="150" width="15" height="15" fill="#55aa55" />
+  <text x="570" y="162" class="legend-text">표준 용액 접근법</text>
+  
+  <!-- Chart 2: Improvement by Physiological State -->
+  <rect x="50" y="320" width="340" height="250" fill="white" stroke="#dddddd" />
+  <text x="220" y="340" text-anchor="middle" class="axis-label">생리적 상태별 개선율</text>
+  
+  <!-- X-axis -->
+  <line x1="100" y1="520" x2="340" y2="520" stroke="#333" stroke-width="1" />
+  <text x="130" y="540" text-anchor="middle" class="tick-label">안정</text>
+  <text x="180" y="540" text-anchor="middle" class="tick-label">중강도</text>
+  <text x="230" y="540" text-anchor="middle" class="tick-label">고강도</text>
+  <text x="280" y="540" text-anchor="middle" class="tick-label">식후</text>
+  <text x="330" y="540" text-anchor="middle" class="tick-label">탈수</text>
+  
+  <!-- Y-axis -->
+  <line x1="100" y1="520" x2="100" y2="360" stroke="#333" stroke-width="1" />
+  <text x="95" y="520" text-anchor="end" class="tick-label">0%</text>
+  <text x="95" y="480" text-anchor="end" class="tick-label">20%</text>
+  <text x="95" y="440" text-anchor="end" class="tick-label">40%</text>
+  <text x="95" y="400" text-anchor="end" class="tick-label">60%</text>
+  <text x="95" y="360" text-anchor="end" class="tick-label">80%</text>
+  
+  <!-- Grid Lines -->
+  <line x1="100" y1="480" x2="340" y2="480" class="grid-line" />
+  <line x1="100" y1="440" x2="340" y2="440" class="grid-line" />
+  <line x1="100" y1="400" x2="340" y2="400" class="grid-line" />
+  <line x1="100" y1="360" x2="340" y2="360" class="grid-line" />
+  
+  <!-- Data Points and Connecting Lines -->
+  <polyline points="130,454 180,428 230,409 280,418 330,404" class="data-line" stroke="#ff8800" />
+  <circle cx="130" cy="454" r="5" fill="#ff8800" />
+  <circle cx="180" cy="428" r="5" fill="#ff8800" />
+  <circle cx="230" cy="409" r="5" fill="#ff8800" />
+  <circle cx="280" cy="418" r="5" fill="#ff8800" />
+  <circle cx="330" cy="404" r="5" fill="#ff8800" />
+  
+  <!-- Chart 3: Measurement Error by Site -->
+  <rect x="410" y="320" width="340" height="250" fill="white" stroke="#dddddd" />
+  <text x="580" y="340" text-anchor="middle" class="axis-label">측정 부위별 오차 (MARD %)</text>
+  
+  <!-- X-axis -->
+  <line x1="460" y1="520" x2="700" y2="520" stroke="#333" stroke-width="1" />
+  <text x="520" y="540" text-anchor="middle" class="tick-label">팔</text>
+  <text x="580" y="540" text-anchor="middle" class="tick-label">손목</text>
+  <text x="640" y="540" text-anchor="middle" class="tick-label">손바닥</text>
+  
+  <!-- Y-axis -->
+  <line x1="460" y1="520" x2="460" y2="360" stroke="#333" stroke-width="1" />
+  <text x="455" y="520" text-anchor="end" class="tick-label">0%</text>
+  <text x="455" y="480" text-anchor="end" class="tick-label">5%</text>
+  <text x="455" y="440" text-anchor="end" class="tick-label">10%</text>
+  <text x="455" y="400" text-anchor="end" class="tick-label">15%</text>
+  <text x="455" y="360" text-anchor="end" class="tick-label">20%</text>
+  
+  <!-- Grid Lines -->
+  <line x1="460" y1="480" x2="700" y2="480" class="grid-line" />
+  <line x1="460" y1="440" x2="700" y2="440" class="grid-line" />
+  <line x1="460" y1="400" x2="700" y2="400" class="grid-line" />
+  <line x1="460" y1="360" x2="700" y2="360" class="grid-line" />
+  
+  <!-- Data Bars -->
+  <rect x="500" y="375.6" width="40" height="144.4" fill="#8888ff" class="bar" />
+  <rect x="500" y="480.0" width="40" height="40.0" fill="#44cc44" class="bar" />
+  
+  <rect x="560" y="366.2" width="40" height="153.8" fill="#8888ff" class="bar" />
+  <rect x="560" y="477.8" width="40" height="42.2" fill="#44cc44" class="bar" />
+  
+  <rect x="620" y="387.6" width="40" height="132.4" fill="#8888ff" class="bar" />
+  <rect x="620" y="484.4" width="40" height="35.6" fill="#44cc44" class="bar" />
+  
+  <!-- Legend for Chart 3 -->
+  <rect x="550" y="365" width="15" height="15" fill="#8888ff" />
+  <text x="570" y="377" class="legend-text">기존 단일 센서</text>
+  <rect x="550" y="385" width="15" height="15" fill="#44cc44" />
+  <text x="570" y="397" class="legend-text">표준 용액 접근법</text>
+  
+  <!-- Overall Performance Box -->
+  <rect x="50" y="30" width="180" height="60" rx="10" ry="10" fill="#f0f8ff" stroke="#0066cc" stroke-width="1" />
+  <text x="65" y="50" text-anchor="start" font-weight="bold" class="annotation">평균 정확도 향상: 64.5%</text>
+  <text x="65" y="70" text-anchor="start" class="annotation">신뢰 구간 개선: ±25.6% → ±9.1%</text>
+  
+  <!-- Additional Notes -->
+  <rect x="580" y="30" width="170" height="60" rx="10" ry="10" fill="#fff8f0" stroke="#ff8800" stroke-width="1" />
+  <text x="665" y="50" text-anchor="middle" font-weight="bold" class="annotation">주요 발견</text>
+  <text x="665" y="70" text-anchor="middle" class="annotation">변동성 큰 조건에서 더 효과적</text>
+</svg>
