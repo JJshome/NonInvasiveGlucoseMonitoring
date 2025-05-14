@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시뮬레이션 결과 - 표준 용액 기반 비침습적 체외 진단 시뮬레이터</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+        .header {
+            padding: 1.5rem 0;
+            margin-bottom: 2rem;
+            background-color: #f8f9fa;
+            border-radius: 0.5rem;
+        }
+        .result-card {
+            margin-bottom: 2rem;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+        }
+        .result-card .card-header {
+            background-color: #0066cc;
+            color: white;
+            font-weight: bold;
+        }
+        .result-image {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #dee2e6;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .stats-table th {
+            width: 40%;
+        }
+        .positive {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .negative {
+            color: #dc3545;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header text-center">
+            <h1>시뮬레이션 결과</h1>
+            <p class="lead">표준 용액 기반 비침습적 체외 진단 시뮬레이션 결과를 확인하세요.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="card result-card">
+                    <div class="card-header">
+                        <h3>결과 요약</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4 class="text-center mb-3">측정값 비교</h4>
+                                <table class="table table-bordered stats-table">
+                                    <tr>
+                                        <th>실제 혈당값</th>
+                                        <td>
+                                            <span id="actual_glucose">{{ results.summary.blood_glucose }}</span> mg/dL
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>보정 전 측정값</th>
+                                        <td>
+                                            <span id="uncalibrated_value">{{ results.summary.uncalibrated_value }}</span> mg/dL
+                                            <br>
+                                            <small class="text-muted">
+                                                오차: <span id="uncalibrated_error" class="negative">
+                                                    {{ results.summary.error_uncalibrated|round(2) }}%
+                                                </span>
+                                            </small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>보정 후 측정값</th>
+                                        <td>
+                                            <span id="calibrated_value">{{ results.summary.calibrated_value }}</span> mg/dL
+                                            <br>
+                                            <small class="text-muted">
+                                                오차: <span id="calibrated_error" class="positive">
+                                                    {{ results.summary.error_calibrated|round(2) }}%
+                                                </span>
+                                            </small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>정확도 개선율</th>
+                                        <td>
+                                            <span id="improvement" class="positive">{{ results.summary.improvement|round(2) }}%</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-md-6">
+                                <h4 class="text-center mb-3">보정 결과 차트</h4>
+                                <img src="/results/{{ results.files.comparison_plot.split('/')[-1] }}" alt="보정 결과 차트" class="result-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card result-card">
+                    <div class="card-header">
+                        <h3>센서 측정 데이터</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4 class="text-center mb-3">포도당 센서 시계열</h4>
+                                <img src="/results/{{ results.files.glucose_plot.split('/')[-1] }}" alt="포도당 센서 시계열" class="result-image">
+                                <p class="text-center">
+                                    <small class="text-muted">
+                                        제1센서(파란색): 미지의 포도당 측정<br>
+                                        제2센서(빨간색): 표준 포도당 용액
+                                    </small>
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                <h4 class="text-center mb-3">소금물 센서 시계열</h4>
+                                <img src="/results/{{ results.files.salt_plot.split('/')[-1] }}" alt="소금물 센서 시계열" class="result-image">
+                                <p class="text-center">
+                                    <small class="text-muted">
+                                        제2센서(녹색): 표준 소금물 저항 측정
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card result-card">
+                    <div class="card-header">
+                        <h3>결론 및 해석</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            표준 용액 기반 보정 알고리즘을 적용한 결과, 포도당 측정의 정확도가 크게 향상되었습니다.
+                            보정 전 측정값은 <span id="error_before" class="negative">{{ results.summary.error_uncalibrated|round(2) }}%</span>의 오차를 보였으나,
+                            보정 후에는 오차가 <span id="error_after" class="positive">{{ results.summary.error_calibrated|round(2) }}%</span>로 감소하였습니다.
+                        </p>
+                        <p>
+                            이는 표준 용액의 시간에 따른 농도 변화를 관찰하여 피부 특성과 땀 분비 패턴을 정확히 분석함으로써
+                            개인화된 보정 계수를 도출한 결과입니다. 이 방법을 통해 개인별, 측정 부위별 차이에 영향을 받지 않는
+                            일관된 혈당 측정이 가능함을 시뮬레이션을 통해 확인하였습니다.
+                        </p>
+                        <div class="alert alert-info">
+                            <strong>중요 포인트:</strong> 표준 용액 기반 보정 방법은 실제 임상 환경에서
+                            비침습적 혈당 측정의 정확도를 약 <span id="improvement_alert" class="positive">{{ results.summary.improvement|round(2) }}%</span> 향상시킬 수 있는
+                            잠재력을 가지고 있습니다.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4 mb-5">
+                    <a href="/" class="btn btn-primary me-2">새 시뮬레이션 실행</a>
+                    <a href="/results/{{ results.files.json.split('/')[-1] }}" class="btn btn-secondary" download>전체 결과 다운로드 (JSON)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 오차율에 따른 클래스 설정
+        window.addEventListener('DOMContentLoaded', function() {
+            const uncalibratedError = document.getElementById('uncalibrated_error');
+            const calibratedError = document.getElementById('calibrated_error');
+            
+            // 보정 전 오차 클래스 설정
+            const uncalibErrorVal = parseFloat(uncalibratedError.textContent);
+            if (Math.abs(uncalibErrorVal) <= 5) {
+                uncalibratedError.className = 'positive';
+            } else if (Math.abs(uncalibErrorVal) <= 10) {
+                uncalibratedError.className = '';
+            } else {
+                uncalibratedError.className = 'negative';
+            }
+            
+            // 보정 후 오차 클래스 설정
+            const calibErrorVal = parseFloat(calibratedError.textContent);
+            if (Math.abs(calibErrorVal) <= 5) {
+                calibratedError.className = 'positive';
+            } else if (Math.abs(calibErrorVal) <= 10) {
+                calibratedError.className = '';
+            } else {
+                calibratedError.className = 'negative';
+            }
+        });
+    </script>
+</body>
+</html>
