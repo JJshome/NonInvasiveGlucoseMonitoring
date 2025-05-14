@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <style>
+    text {
+      font-family: Arial, sans-serif;
+    }
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .subtitle {
+      font-size: 18px;
+    }
+    .axis-label {
+      font-size: 14px;
+    }
+    .legend-text {
+      font-size: 12px;
+    }
+    .data-point {
+      stroke-width: 2;
+    }
+    .skin-layer {
+      opacity: 0.6;
+    }
+    .arrow {
+      stroke: #333;
+      stroke-width: 2;
+      marker-end: url(#arrowhead);
+    }
+    .annotation {
+      font-size: 12px;
+      fill: #555;
+    }
+  </style>
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+    <linearGradient id="glucose-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff8a00" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#ff8a00" stop-opacity="0.1" />
+    </linearGradient>
+    <linearGradient id="standard-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2080ff" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#2080ff" stop-opacity="0.1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f9f9f9" />
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" class="title">표준 용액 기반 보정 원리</text>
+  <text x="400" y="70" text-anchor="middle" class="subtitle">Standard Solution-Based Calibration Principle</text>
+  
+  <!-- Skin Layers -->
+  <rect x="50" y="150" width="700" height="300" rx="5" ry="5" fill="#f0dbca" class="skin-layer" />
+  <rect x="50" y="200" width="700" height="200" rx="5" ry="5" fill="#e6c9b3" class="skin-layer" />
+  <rect x="50" y="250" width="700" height="100" rx="5" ry="5" fill="#dcb79a" class="skin-layer" />
+  
+  <!-- Layer Labels -->
+  <text x="75" y="180" class="annotation">표피층 (Epidermis)</text>
+  <text x="75" y="230" class="annotation">진피층 (Dermis)</text>
+  <text x="75" y="280" class="annotation">피하조직 (Subcutaneous)</text>
+  
+  <!-- Sensor 1 (Unknown Glucose) -->
+  <circle cx="250" cy="150" r="20" fill="#fff" stroke="#ff5500" stroke-width="3" />
+  <text x="250" y="155" text-anchor="middle" class="annotation" fill="#ff5500">센서 1</text>
+  <text x="250" y="125" text-anchor="middle" class="annotation">미지의 포도당</text>
+  
+  <!-- Sensor 2 (Standard Solution) -->
+  <circle cx="550" cy="150" r="20" fill="#fff" stroke="#0066cc" stroke-width="3" />
+  <text x="550" y="155" text-anchor="middle" class="annotation" fill="#0066cc">센서 2</text>
+  <text x="550" y="125" text-anchor="middle" class="annotation">표준 용액</text>
+  
+  <!-- Glucose Concentration Visualization -->
+  <rect x="200" y="170" width="100" height="180" fill="url(#glucose-gradient)" opacity="0.7" />
+  <rect x="500" y="170" width="100" height="180" fill="url(#standard-gradient)" opacity="0.7" />
+  
+  <!-- Sweat Glands and Flow -->
+  <path d="M 250,350 Q 250,400 280,420 Q 300,435 280,450 Q 260,465 280,480" fill="none" stroke="#ff8a00" stroke-width="2" stroke-dasharray="5,3" />
+  <path d="M 550,350 Q 550,400 580,420 Q 600,435 580,450 Q 560,465 580,480" fill="none" stroke="#2080ff" stroke-width="2" stroke-dasharray="5,3" />
+  
+  <!-- Bloodstream -->
+  <path d="M 50,400 L 750,400" stroke="#ff0000" stroke-width="3" stroke-dasharray="10,4" />
+  <text x="720" y="390" class="annotation" fill="#cc0000">혈류</text>
+  
+  <!-- Time Indicators -->
+  <line x1="100" y1="500" x2="700" y2="500" stroke="#333" stroke-width="2" />
+  <line x1="100" y1="490" x2="100" y2="510" stroke="#333" stroke-width="2" />
+  <line x1="700" y1="490" x2="700" y2="510" stroke="#333" stroke-width="2" />
+  <text x="100" y="525" text-anchor="middle" class="annotation">t = 0</text>
+  <text x="700" y="525" text-anchor="middle" class="annotation">t = T</text>
+  <text x="400" y="545" text-anchor="middle" class="axis-label">시간 (Time)</text>
+  
+  <!-- Concentration Change Graphs -->
+  <polyline points="100,570 200,565 300,555 400,540 500,520 600,515 700,510" fill="none" stroke="#ff5500" stroke-width="2" />
+  <polyline points="100,510 200,515 300,525 400,540 500,560 600,565 700,570" fill="none" stroke="#0066cc" stroke-width="2" />
+  
+  <!-- Legend -->
+  <rect x="600" y="50" width="150" height="70" rx="5" ry="5" fill="white" stroke="#ddd" />
+  <circle cx="620" cy="70" r="5" fill="#ff5500" />
+  <text x="635" y="75" class="legend-text">센서 1 (미지의 포도당)</text>
+  <circle cx="620" cy="95" r="5" fill="#0066cc" />
+  <text x="635" y="100" class="legend-text">센서 2 (표준 용액)</text>
+  
+  <!-- Explanation -->
+  <rect x="150" y="400" width="200" height="70" rx="5" ry="5" fill="white" stroke="#ddd" opacity="0.9" />
+  <text x="160" y="420" class="annotation">센서 1: 측정값 = M₁</text>
+  <text x="160" y="440" class="annotation">실제 포도당 농도 = X_t</text>
+  <text x="160" y="460" class="annotation">M₁ = f(X_t, α)</text>
+  
+  <rect x="450" y="400" width="200" height="70" rx="5" ry="5" fill="white" stroke="#ddd" opacity="0.9" />
+  <text x="460" y="420" class="annotation">센서 2: 측정값 = M₂(t)</text>
+  <text x="460" y="440" class="annotation">알려진 표준 농도 = K</text>
+  <text x="460" y="460" class="annotation">M₂(t) = g(K, α, t)</text>
+  
+  <!-- Correction Formula -->
+  <rect x="300" y="320" width="200" height="50" rx="10" ry="10" fill="#ffffcc" stroke="#dddd00" stroke-width="2" />
+  <text x="400" y="345" text-anchor="middle" font-weight="bold" class="annotation">보정식: X_t = M₁ × (K / M₂(t))</text>
+  
+  <!-- Arrows -->
+  <line x1="280" y1="170" x2="320" y2="320" class="arrow" />
+  <line x1="520" y1="170" x2="480" y2="320" class="arrow" />
+  <line x1="400" y1="370" x2="400" y2="390" class="arrow" />
+  
+  <!-- Environment Factors -->
+  <text x="400" y="200" text-anchor="middle" font-weight="bold" class="annotation">환경 요인 (α): 피부 특성, 땀 분비, 온도, 습도 등</text>
+</svg>
