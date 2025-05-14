@@ -1,0 +1,16 @@
+# 표준 용액 기반 비침습적 체외 진단 프로젝트 의존성 패키지
+
+# 데이터 처리 및 분석
+numpy==1.24.3
+pandas==2.0.2
+scipy==1.10.1
+matplotlib==3.7.1
+
+# 웹 인터페이스
+flask==2.3.2
+werkzeug==2.3.4
+jinja2==3.1.2
+
+# 유틸리티
+requests==2.30.0
+python-dateutil==2.8.2
