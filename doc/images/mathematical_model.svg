@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- 배경 -->
+  <rect width="800" height="600" fill="#f8f9fa" />
+  
+  <!-- 제목 -->
+  <text x="400" y="50" font-family="Arial" font-size="24" text-anchor="middle" fill="#333333" font-weight="bold">보정 알고리즘 수학적 모델</text>
+  
+  <!-- 중앙 프레임 -->
+  <rect x="100" y="100" width="600" height="450" rx="20" ry="20" fill="#ffffff" stroke="#333333" stroke-width="2" />
+  
+  <!-- 모델 제목 -->
+  <rect x="150" y="130" width="500" height="40" rx="10" ry="10" fill="#e6f2ff" stroke="#0066cc" stroke-width="2" />
+  <text x="400" y="157" font-family="Arial" font-size="18" text-anchor="middle" fill="#333333" font-weight="bold">표준 용액 기반 보정 모델</text>
+  
+  <!-- 중앙 구분선 -->
+  <line x1="400" y1="190" x2="400" y2="500" stroke="#cccccc" stroke-width="1" stroke-dasharray="10,5" />
+  
+  <!-- 왼쪽 수식 (제1센서) -->
+  <g>
+    <text x="250" y="210" font-family="Arial" font-size="16" text-anchor="middle" fill="#333333" font-weight="bold">제1센서 모델</text>
+    
+    <text x="150" y="250" font-family="Arial" font-size="14" text-anchor="start" fill="#333333">측정값:</text>
+    <text x="350" y="250" font-family="Arial" font-size="14" text-anchor="end" fill="#0066cc" font-style="italic">S₁ = f(X_t, P, E, T, H)</text>
+    
+    <text x="150" y="290" font-family="Arial" font-size="14" text-anchor="start" fill="#333333">여기서:</text>
+    <text x="170" y="320" font-family="Arial" font-size="14" text-anchor="start" fill="#333333">X_t: 미지의 포도당 농도</text>
+    <text x="170" y="350" font-family="Arial" font-size="14" text-anchor="start" fill="#333333">P: 피부 특성</text>
+    <text x="170" y="380" font-family="Arial" font-size="14" text-anchor="start" fill="#333333">E: 환경 조건</text>
+    <text x="170" y="410" font-family="Arial" font-size="14" text-anchor="start" fill="#333333">T: 시간</text>
+    <text x="170" y="440" font-family="Arial" font-size="14" text-anchor="start" fill="#333333">H: 습도</text>
+    
+    <rect x="150" y="470" width="200" height="30" rx="5" ry="5" fill="#f8d7da" stroke="#dc3545" stroke-width="1" />
+    <text x="250" y="490" font-family="Arial" font-size="14" text-anchor="middle" fill="#333333">보정 없이 사용 불가!</text>
+  </g>
+  
+  <!-- 오른쪽 수식 (제2센서) -->
+  <g>
+    <text x="550" y="210" font-family="Arial" font-size="16" text-anchor="middle" fill="#333333" font-weight="bold">제2센서 모델 (표준 용액)</text>
+    
+    <text x="450" y="250" font-family="Arial" font-size="14" text-anchor="start" fill="#333333">시간별 측정값:</text>
+    <text x="650" y="250" font-family="Arial" font-size="14" text-anchor="end" fill="#cc0066" font-style="italic">S₂(t) = g(K, P, E, T, H, t)</text>
+    
+    <text x="450" y="290" font-family="Arial" font-size="14" text-anchor="start" fill="#333333">여기서:</text>
+    <text x="470" y="320" font-family="Arial" font-size="14" text-anchor="start" fill="#333333">K: 알려진 표준 용액 농도</text>
+    <text x="470" y="350" font-family="Arial" font-size="14" text-anchor="start" fill="#333333">t: 경과 시간</text>
+    
+    <text x="450" y="390" font-family="Arial" font-size="14" text-anchor="start" fill="#333333">보정 함수:</text>
+    <text x="650" y="390" font-family="Arial" font-size="14" text-anchor="end" fill="#009933" font-style="italic">C = h(S₂(t₀), S₂(t₁), ... S₂(tₙ))</text>
+    
+    <rect x="450" y="430" width="200" height="70" rx="5" ry="5" fill="#d4edda" stroke="#28a745" stroke-width="1" />
+    <text x="550" y="455" font-family="Arial" font-size="14" text-anchor="middle" fill="#333333">보정된 최종값:</text>
+    <text x="550" y="485" font-family="Arial" font-size="16" text-anchor="middle" fill="#009933" font-weight="bold" font-style="italic">X_{corrected} = S₁ × C</text>
+  </g>
+  
+  <!-- 보정 화살표 -->
+  <path d="M350,400 C380,400 370,450 400,450" stroke="#009933" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
+  
+  <!-- 화살표 정의 -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#009933" />
+    </marker>
+  </defs>
+  
+  <!-- 애니메이션 요소: 수식 강조 효과 -->
+  <rect x="400" y="445" width="300" height="50" rx="5" ry="5" fill="#00993320" opacity="0.5">
+    <animate attributeName="opacity" values="0.2;0.5;0.2" dur="3s" repeatCount="indefinite" />
+  </rect>
+</svg>
