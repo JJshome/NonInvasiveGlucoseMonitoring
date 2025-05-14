@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- 배경 -->
+  <rect width="800" height="600" fill="#f8f9fa" />
+  
+  <!-- 제목 -->
+  <text x="400" y="50" font-family="Arial" font-size="24" text-anchor="middle" fill="#333333" font-weight="bold">표준 용액을 이용한 비침습적 체외 진단 원리</text>
+  
+  <!-- 피부 영역 -->
+  <rect x="50" y="150" width="700" height="200" rx="20" ry="20" fill="#ffdfba" stroke="#deb887" stroke-width="3" />
+  <text x="400" y="230" font-family="Arial" font-size="20" text-anchor="middle" fill="#333333">피부 영역</text>
+  
+  <!-- 센서1 -->
+  <g>
+    <rect x="150" y="100" width="120" height="80" rx="10" ry="10" fill="#c2e0ff" stroke="#0066cc" stroke-width="3" />
+    <text x="210" y="145" font-family="Arial" font-size="16" text-anchor="middle" fill="#333333">제1센서</text>
+    <text x="210" y="165" font-family="Arial" font-size="12" text-anchor="middle" fill="#333333">(미지의 포도당)</text>
+  </g>
+  
+  <!-- 센서2 -->
+  <g>
+    <rect x="530" y="100" width="120" height="80" rx="10" ry="10" fill="#ffd6e0" stroke="#cc0066" stroke-width="3" />
+    <text x="590" y="145" font-family="Arial" font-size="16" text-anchor="middle" fill="#333333">제2센서</text>
+    <text x="590" y="165" font-family="Arial" font-size="12" text-anchor="middle" fill="#333333">(표준 용액)</text>
+  </g>
+  
+  <!-- 화살표1 (땀이나 체액 흐름) -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333333" />
+    </marker>
+  </defs>
+  <path d="M210,350 L210,250" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="180" y="300" font-family="Arial" font-size="14" text-anchor="end" fill="#333333">땀/체액</text>
+  
+  <!-- 화살표2 (표준 용액 확산) -->
+  <path d="M590,250 L590,350" stroke="#cc0066" stroke-width="2" marker-end="url(#arrowhead)" stroke-dasharray="5,5" />
+  <text x="620" y="300" font-family="Arial" font-size="14" text-anchor="start" fill="#333333">표준 용액 확산</text>
+  
+  <!-- 보정 화살표 -->
+  <path d="M280,140 L500,140" stroke="#009933" stroke-width="3" marker-end="url(#arrowhead)" />
+  <text x="390" y="130" font-family="Arial" font-size="14" text-anchor="middle" fill="#009933" font-weight="bold">보정 관계</text>
+  
+  <!-- 측정값 표시 영역 -->
+  <rect x="150" y="400" width="500" height="150" rx="10" ry="10" fill="#ffffff" stroke="#333333" stroke-width="2" />
+  
+  <!-- 측정값 제목 -->
+  <text x="400" y="430" font-family="Arial" font-size="18" text-anchor="middle" fill="#333333" font-weight="bold">측정 결과</text>
+  
+  <!-- 측정값 내용 -->
+  <text x="180" y="460" font-family="Arial" font-size="14" fill="#333333" text-anchor="start">제1센서 (미보정): 125 mg/dL</text>
+  <text x="180" y="490" font-family="Arial" font-size="14" fill="#333333" text-anchor="start">제2센서 변화율: 포도당 농도 감소 11%</text>
+  <text x="180" y="520" font-family="Arial" font-size="14" fill="#009933" font-weight="bold" text-anchor="start">보정된 최종값: 136 mg/dL</text>
+  <text x="500" y="520" font-family="Arial" font-size="14" fill="#0066cc" text-anchor="start">혈액 혈당값: 133 mg/dL</text>
+</svg>
