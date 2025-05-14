@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- 배경 -->
+  <rect width="800" height="600" fill="#f8f9fa" />
+  
+  <!-- 제목 -->
+  <text x="400" y="50" font-family="Arial" font-size="24" text-anchor="middle" fill="#333333" font-weight="bold">표준 용액 농도 변화 측정 흐름도</text>
+  
+  <!-- 시간축 -->
+  <line x1="100" y1="500" x2="700" y2="500" stroke="#333333" stroke-width="3" />
+  <text x="400" y="530" font-family="Arial" font-size="16" text-anchor="middle" fill="#333333">시간 (초)</text>
+  
+  <!-- 시간점 표시 -->
+  <g>
+    <line x1="100" y1="500" x2="100" y2="510" stroke="#333333" stroke-width="2" />
+    <text x="100" y="525" font-family="Arial" font-size="12" text-anchor="middle" fill="#333333">0</text>
+  </g>
+  <g>
+    <line x1="200" y1="500" x2="200" y2="510" stroke="#333333" stroke-width="2" />
+    <text x="200" y="525" font-family="Arial" font-size="12" text-anchor="middle" fill="#333333">60</text>
+  </g>
+  <g>
+    <line x1="300" y1="500" x2="300" y2="510" stroke="#333333" stroke-width="2" />
+    <text x="300" y="525" font-family="Arial" font-size="12" text-anchor="middle" fill="#333333">120</text>
+  </g>
+  <g>
+    <line x1="400" y1="500" x2="400" y2="510" stroke="#333333" stroke-width="2" />
+    <text x="400" y="525" font-family="Arial" font-size="12" text-anchor="middle" fill="#333333">180</text>
+  </g>
+  <g>
+    <line x1="500" y1="500" x2="500" y2="510" stroke="#333333" stroke-width="2" />
+    <text x="500" y="525" font-family="Arial" font-size="12" text-anchor="middle" fill="#333333">240</text>
+  </g>
+  <g>
+    <line x1="600" y1="500" x2="600" y2="510" stroke="#333333" stroke-width="2" />
+    <text x="600" y="525" font-family="Arial" font-size="12" text-anchor="middle" fill="#333333">300</text>
+  </g>
+  <g>
+    <line x1="700" y1="500" x2="700" y2="510" stroke="#333333" stroke-width="2" />
+    <text x="700" y="525" font-family="Arial" font-size="12" text-anchor="middle" fill="#333333">360</text>
+  </g>
+  
+  <!-- 농도축 (좌측) -->
+  <line x1="100" y1="150" x2="100" y2="500" stroke="#0066cc" stroke-width="3" />
+  <text x="90" y="325" font-family="Arial" font-size="16" text-anchor="middle" fill="#0066cc" transform="rotate(-90, 90, 325)">표준 포도당 용액 농도 (mg/dL)</text>
+  
+  <!-- 농도점 표시 (좌측) -->
+  <g>
+    <line x1="95" y1="450" x2="105" y2="450" stroke="#0066cc" stroke-width="2" />
+    <text x="85" y="455" font-family="Arial" font-size="12" text-anchor="end" fill="#0066cc">80</text>
+  </g>
+  <g>
+    <line x1="95" y1="400" x2="105" y2="400" stroke="#0066cc" stroke-width="2" />
+    <text x="85" y="405" font-family="Arial" font-size="12" text-anchor="end" fill="#0066cc">85</text>
+  </g>
+  <g>
+    <line x1="95" y1="350" x2="105" y2="350" stroke="#0066cc" stroke-width="2" />
+    <text x="85" y="355" font-family="Arial" font-size="12" text-anchor="end" fill="#0066cc">90</text>
+  </g>
+  <g>
+    <line x1="95" y1="300" x2="105" y2="300" stroke="#0066cc" stroke-width="2" />
+    <text x="85" y="305" font-family="Arial" font-size="12" text-anchor="end" fill="#0066cc">95</text>
+  </g>
+  <g>
+    <line x1="95" y1="250" x2="105" y2="250" stroke="#0066cc" stroke-width="2" />
+    <text x="85" y="255" font-family="Arial" font-size="12" text-anchor="end" fill="#0066cc">100</text>
+  </g>
+  
+  <!-- 저항축 (우측) -->
+  <line x1="700" y1="150" x2="700" y2="500" stroke="#cc0066" stroke-width="3" />
+  <text x="710" y="325" font-family="Arial" font-size="16" text-anchor="middle" fill="#cc0066" transform="rotate(90, 710, 325)">표준 소금물 저항 (Ω)</text>
+  
+  <!-- 저항점 표시 (우측) -->
+  <g>
+    <line x1="695" y1="450" x2="705" y2="450" stroke="#cc0066" stroke-width="2" />
+    <text x="715" y="455" font-family="Arial" font-size="12" text-anchor="start" fill="#cc0066">320</text>
+  </g>
+  <g>
+    <line x1="695" y1="400" x2="705" y2="400" stroke="#cc0066" stroke-width="2" />
+    <text x="715" y="405" font-family="Arial" font-size="12" text-anchor="start" fill="#cc0066">360</text>
+  </g>
+  <g>
+    <line x1="695" y1="350" x2="705" y2="350" stroke="#cc0066" stroke-width="2" />
+    <text x="715" y="355" font-family="Arial" font-size="12" text-anchor="start" fill="#cc0066">400</text>
+  </g>
+  <g>
+    <line x1="695" y1="300" x2="705" y2="300" stroke="#cc0066" stroke-width="2" />
+    <text x="715" y="305" font-family="Arial" font-size="12" text-anchor="start" fill="#cc0066">440</text>
+  </g>
+  <g>
+    <line x1="695" y1="250" x2="705" y2="250" stroke="#cc0066" stroke-width="2" />
+    <text x="715" y="255" font-family="Arial" font-size="12" text-anchor="start" fill="#cc0066">480</text>
+  </g>
+  
+  <!-- 데이터 포인트 및 그래프 (샘플 1) -->
+  <!-- 포도당 곡선 -->
+  <polyline points="100,250 200,300 300,330 400,360 500,380 600,400" fill="none" stroke="#0066cc" stroke-width="3" />
+  <circle cx="100" cy="250" r="5" fill="#0066cc" />
+  <circle cx="200" cy="300" r="5" fill="#0066cc" />
+  <circle cx="300" cy="330" r="5" fill="#0066cc" />
+  <circle cx="400" cy="360" r="5" fill="#0066cc" />
+  <circle cx="500" cy="380" r="5" fill="#0066cc" />
+  <circle cx="600" cy="400" r="5" fill="#0066cc" />
+  
+  <!-- 소금물 저항 곡선 -->
+  <polyline points="100,250 200,270 300,290 400,320 500,350 600,370" fill="none" stroke="#cc0066" stroke-width="3" stroke-dasharray="5,5" />
+  <circle cx="100" cy="250" r="5" fill="#cc0066" />
+  <circle cx="200" cy="270" r="5" fill="#cc0066" />
+  <circle cx="300" cy="290" r="5" fill="#cc0066" />
+  <circle cx="400" cy="320" r="5" fill="#cc0066" />
+  <circle cx="500" cy="350" r="5" fill="#cc0066" />
+  <circle cx="600" cy="370" r="5" fill="#cc0066" />
+  
+  <!-- 측정 영역 하이라이트 -->
+  <rect x="550" y="200" width="100" height="350" fill="#00993330" stroke="#009933" stroke-width="2" stroke-dasharray="10,5" />
+  <text x="600" y="190" font-family="Arial" font-size="14" text-anchor="middle" fill="#009933" font-weight="bold">측정 시점</text>
+  
+  <!-- 범례 -->
+  <rect x="420" y="120" width="300" height="70" rx="10" ry="10" fill="#ffffff" stroke="#333333" stroke-width="1" />
+  <circle cx="440" cy="140" r="5" fill="#0066cc" />
+  <line x1="450" y1="140" x2="480" y2="140" stroke="#0066cc" stroke-width="3" />
+  <text x="490" y="145" font-family="Arial" font-size="14" fill="#333333">표준 포도당 용액 (샘플 1)</text>
+  <circle cx="440" cy="170" r="5" fill="#cc0066" />
+  <line x1="450" y1="170" x2="480" y2="170" stroke="#cc0066" stroke-width="3" stroke-dasharray="5,5" />
+  <text x="490" y="175" font-family="Arial" font-size="14" fill="#333333">표준 소금물 저항 (샘플 1)</text>
+  
+  <!-- 애니메이션 요소: 깜빡이는 측정 포인트 -->
+  <circle cx="600" cy="400" r="8" fill="#009933">
+    <animate attributeName="r" values="8;12;8" dur="2s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="600" cy="370" r="8" fill="#009933">
+    <animate attributeName="r" values="8;12;8" dur="2s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite" />
+  </circle>
+</svg>
